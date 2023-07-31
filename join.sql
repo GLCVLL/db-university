@@ -37,7 +37,7 @@ JOIN course_teacher AS ct ON c.id = ct.course_id
 JOIN teachers AS t ON ct.teacher_id = t.id;
 
 6 -- Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica 
-SELECT t.name, t.surname, t.id, t.email
+SELECT DISTINCT t.name, t.surname, t.id, t.email
 FROM teachers AS t
 JOIN course_teacher AS ct ON t.id = ct.teacher_id
 JOIN courses AS c ON ct.course_id = c.id
