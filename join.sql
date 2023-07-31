@@ -13,3 +13,9 @@ JOIN departments AS dep ON deg.department_id = dep.id
 WHERE dep.name = 'Dipartimento di Neuroscienze';
 
 3 --Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+
+SELECT c.name
+FROM courses AS c
+JOIN course_teacher AS ct ON c.id = ct.course_id
+JOIN teachers AS t ON ct.teacher_id = t.id
+WHERE t.id = 44;
